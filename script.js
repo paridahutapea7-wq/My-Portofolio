@@ -54,3 +54,16 @@ document.querySelectorAll('.skill-card, .project-card').forEach(el => {
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
 });
+
+// Image gallery functionality
+function changeMainImage(thumbnail) {
+    const mainImage = document.querySelector('.project-img');
+    const src = thumbnail.src;
+    mainImage.src = src;
+    
+    // Update thumbnail highlighting
+    document.querySelectorAll('.thumbnail').forEach(thumb => {
+        thumb.style.opacity = '0.7';
+    });
+    thumbnail.style.opacity = '1';
+}
